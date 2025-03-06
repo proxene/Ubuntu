@@ -78,3 +78,11 @@ If you want to uninstall the monitoring system, follow these steps:
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br />
+
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0). See the [LICENSE](LICENSE) file for details.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
