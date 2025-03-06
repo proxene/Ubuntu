@@ -32,8 +32,8 @@ def get_cpu_graph():
             "--width=800", "--height=400",
             "DEF:cpu_usage=system.rrd:cpu_usage:AVERAGE",
             "DEF:io_delay=system.rrd:io_delay:AVERAGE",
-            "LINE2:cpu_usage#00FF00:CPU Usage (%)",  # Vert pour CPU Usage
-            "LINE2:io_delay#0000FF:IODelay (%)"     # Bleu pour IODelay
+            "LINE2:cpu_usage#94AE0A:CPU Usage (%)",
+            "LINE2:io_delay#115FA6:IODelay (%)"
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
@@ -50,8 +50,8 @@ def get_memory_graph():
             "--width=800", "--height=400",
             "DEF:total_mem=system.rrd:total_mem:AVERAGE",
             "DEF:used_mem=system.rrd:used_mem:AVERAGE",
-            "LINE2:total_mem#00FF00:Total Memory (MB)",  # Vert pour mémoire totale
-            "LINE2:used_mem#0000FF:Used Memory (MB)"    # Bleu pour mémoire utilisée
+            "LINE2:total_mem#94AE0A:Total Memory (MB)",
+            "LINE2:used_mem#115FA6:Used Memory (MB)"
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
@@ -68,8 +68,8 @@ def get_disk_graph():
             "--width=800", "--height=400",
             "DEF:total_disk=system.rrd:total_disk:AVERAGE",
             "DEF:used_disk=system.rrd:used_disk:AVERAGE",
-            "LINE2:total_disk#00FF00:Total Disk Space (GB)",  # Vert pour espace disque total
-            "LINE2:used_disk#0000FF:Used Disk Space (GB)"    # Bleu pour espace disque utilisé
+            "LINE2:total_disk#94AE0A:Total Disk Space (GB)",
+            "LINE2:used_disk#115FA6:Used Disk Space (GB)"
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
