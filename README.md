@@ -1,43 +1,40 @@
 <a id="readme-top"></a>
 
-[![Issues][issues-shield]][issues-url]<br /><br />
 
-This project allows you to monitor system metrics such as CPU usage, memory, and disk usage. It uses RRDTool for data storage and Flask for serving the metrics through a web interface.<br /><br />
+# Ubuntu Monitoring
 
-### Packages
+[![GitHub Issues](https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/issues)
+[![License](https://img.shields.io/github/license/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/blob/main/LICENSE)
+[![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg?style=for-the-badge)](https://www.python.org/)
+[![RRDTool](https://img.shields.io/badge/RRDTool-1.8.0-green.svg?style=for-the-badge)](https://oss.oetiker.ch/rrdtool/)<br /><br />
 
-Before running the application, ensure you have the required packages installed on your system:
+This project allows you to monitor system metrics such as CPU usage, memory, and disk usage. It uses RRDTool for data storage and Flask for serving the metrics through a web interface.
 
-  ```sh
-  sudo apt-get update && apt-get upgrade -y
-  sudo apt-get install -y python3 python3-pip rrdtool sysstat bc
-  pip install psutil flask requests
-  ```
+<br />
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Table of Contents
 
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Uninstallation](#uninstallation)
+4. [Contributing](#contributing)
+5. [License](#license)
 
-### RRDTool Database
+<br />
 
-This project uses RRDTool for storing system metrics. You need to create an RRD database before running the application. Use this command to initialize a new database file system.rrd with a 5-minute step interval and several data sources (DS) for monitoring CPU, memory, disk usage, etc :
+## Installation
 
-```unix
-rrdtool create system.rrd --step 300 \
-    DS:cpu_usage:GAUGE:600:0:100 \
-    DS:io_delay:GAUGE:600:0:100 \
-    DS:total_mem:GAUGE:600:0:U \
-    DS:used_mem:GAUGE:600:0:U \
-    DS:total_disk:GAUGE:600:0:U \
-    DS:used_disk:GAUGE:600:0:U \
-    RRA:AVERAGE:0.5:1:2880 \
-    RRA:AVERAGE:0.5:5:576
+To install the monitoring system in one command, run the following:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/proxene/Ubuntu-Monitoring/main/setup.sh || wget -qO - https://raw.githubusercontent.com/proxene/Ubuntu-Monitoring/main/setup.sh)
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<hr><br />
+<br />
 
-### Usage
+## Usage
 
 Once the script is running, you can access the system metrics via the following URLs in your web browser:
 
@@ -48,7 +45,36 @@ Disk (Graph) : http://127.0.0.1:5000/graph/disk
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<br />
 
-<!-- MARKDOWN LINKS & IMAGES -->
-[issues-url]: https://github.com/proxene/Ubuntu/issues
-[issues-shield]: https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge
+## Uninstallation
+If you want to uninstall the monitoring system, follow these steps:
+
+  <br />
+
+  * Stop and disable the systemd service:
+  
+  ```bash
+  sudo systemctl stop server-monitoring.service
+  sudo systemctl disable server-monitoring.service
+  sudo rm /etc/systemd/system/server-monitoring.service
+  sudo systemctl daemon-reload
+  ```
+
+  <br />
+
+  * Remove the cron job:
+
+  ```bash
+  sudo crontab -l | grep -v "/opt/server-monitoring/update_rrd.sh" | sudo crontab -
+  ```
+  
+  <br />
+
+  * Delete the installation directory:
+
+  ```bash
+  sudo rm -rf /opt/server-monitoring
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
