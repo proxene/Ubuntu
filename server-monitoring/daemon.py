@@ -29,7 +29,7 @@ def get_cpu_graph():
         subprocess.run([
             "rrdtool", "graph", graph_path,
             "--title=CPU Usage et IODelay",
-            "--width=800", "--height=400",
+            "--width=800", "--height=200",
             "DEF:cpu_usage=system.rrd:cpu_usage:AVERAGE",
             "DEF:io_delay=system.rrd:io_delay:AVERAGE",
   	    "AREA:cpu_usage#94AE0A40:CPU Usage (%)",
@@ -49,7 +49,7 @@ def get_memory_graph():
         subprocess.run([
             "rrdtool", "graph", graph_path,
             "--title=Memory Usage",
-            "--width=800", "--height=400",
+            "--width=800", "--height=200",
             "DEF:total_mem=system.rrd:total_mem:AVERAGE",
             "DEF:used_mem=system.rrd:used_mem:AVERAGE",
             "CDEF:total_mem_gb=total_mem,1,*",
@@ -71,7 +71,7 @@ def get_disk_graph():
         subprocess.run([
             "rrdtool", "graph", graph_path,
             "--title=Disk Usage",
-            "--width=800", "--height=400",
+            "--width=800", "--height=200",
             "DEF:total_disk=system.rrd:total_disk:AVERAGE",
     	    "DEF:used_disk=system.rrd:used_disk:AVERAGE",
     	    "CDEF:total_disk_gb=total_disk,1,*",
