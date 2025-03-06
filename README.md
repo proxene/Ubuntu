@@ -17,8 +17,7 @@ This project allows you to monitor system metrics such as CPU usage, memory, and
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Uninstallation](#uninstallation)
-4. [Contributing](#contributing)
-5. [License](#license)
+4. [License](#license)
 
 <br />
 
