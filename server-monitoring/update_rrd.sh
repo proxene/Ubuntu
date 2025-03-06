@@ -20,11 +20,5 @@ total_disk_gb=$(echo "scale=2; $total_disk / 1073741824" | bc)
 used_disk_gb=$(echo "scale=2; $used_disk / 1073741824" | bc)
 
 
-# Debug
-echo "CPU: $cpu_usage, IO Delay: $io_delay"
-echo "Total Mem: $total_mem bytes, Used Mem: $used_mem bytes"
-echo "Total Disk: $total_disk bytes, Used Disk: $used_disk bytes"
-
-
 # Updating RRD Database
 rrdtool update /opt/server-monitoring/system.rrd N:$cpu_usage:$io_delay:$total_mem:$used_mem:$total_disk:$used_disk
