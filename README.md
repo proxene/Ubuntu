@@ -9,8 +9,8 @@ This project allows you to monitor system metrics such as CPU usage, memory, and
 Before running the application, ensure you have the required packages installed on your system:
 
   ```sh
-  sudo apt update
-  sudo apt install python3 python3-pip rrdtool sysstat bc
+  sudo apt-get update && apt-get upgrade -y
+  sudo apt-get install -y python3 python3-pip rrdtool sysstat bc
   pip install psutil flask requests
   ```
 
