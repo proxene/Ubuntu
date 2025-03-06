@@ -4,7 +4,7 @@
 # Ubuntu Monitoring
 
 [![GitHub Issues](https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/issues)
-[![License](https://img.shields.io/github/license/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/tree/main?tab=License-1-ov-file)
 [![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg?style=for-the-badge)](https://www.python.org/)
 [![RRDTool](https://img.shields.io/badge/RRDTool-1.8.0-green.svg?style=for-the-badge)](https://oss.oetiker.ch/rrdtool/)<br /><br />
 
@@ -83,6 +83,6 @@ If you want to uninstall the monitoring system, follow these steps:
 
 ## License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0). See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0). See the [LICENSE](https://github.com/proxene/Ubuntu-Monitoring/tree/main?tab=License-1-ov-file) file for details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
