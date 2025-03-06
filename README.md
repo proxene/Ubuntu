@@ -51,4 +51,4 @@ Disk (Graph) : http://127.0.0.1:5000/graph/disk
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [issues-url]: https://github.com/proxene/Ubuntu/issues
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge
