@@ -4,9 +4,9 @@
 # Ubuntu Monitoring
 
 [![GitHub Issues](https://img.shields.io/github/issues/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/issues)
-[![License](https://img.shields.io/github/license/proxene/Ubuntu-Monitoring.svg?style=for-the-badge)](https://github.com/proxene/Ubuntu-Monitoring/tree/main?tab=License-1-ov-file)
 [![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg?style=for-the-badge)](https://www.python.org/)
-[![RRDTool](https://img.shields.io/badge/RRDTool-1.8.0-green.svg?style=for-the-badge)](https://oss.oetiker.ch/rrdtool/)<br /><br />
+[![RRDTool](https://img.shields.io/badge/RRDTool-1.8.0-green.svg?style=for-the-badge)](https://oss.oetiker.ch/rrdtool/)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=Ubuntu&logoColor=white)<br /><br />
 
 This project allows you to monitor system metrics such as CPU usage, memory, and disk usage. It uses RRDTool for data storage and Flask for serving the metrics through a web interface.
 
