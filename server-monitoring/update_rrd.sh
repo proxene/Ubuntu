@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Get all system values
-CPU=$(ps -eo pcpu | awk 'NR>1' | awk '{sum+=$1} END {print sum}')
-MEM=$(free | awk '/Mem/ {printf "%.2f", $3/$2 * 100}')
-DISK=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
+# Get System Values
+cpu_usage=$(ps aux --sort=-%cpu | head -n 2 | tail -n 1 | awk '{print $3}')
+io_delay=$(iostat -x | grep '^sda' | awk '{print $4}')
+total_mem=$(free -m | grep Mem | awk '{print $2}')
+used_mem=$(free -m | grep Mem | awk '{print $3}')
+total_disk=$(df / | grep / | awk '{print $2}' | sed 's/%//g')
+used_disk=$(df / | grep / | awk '{print $3}' | sed 's/%//g')
 
-# Udpate RRD Database
-rrdtool update /opt/server-monitoring/system.rrd N:$CPU:$MEM:$DISK
+# Updating RRD Database
+rrdtool update /opt/server-monitoring/system.rrd N:$cpu_usage:$io_delay:$total_mem:$used_mem:$total_disk:$used_disk
