@@ -28,10 +28,12 @@ def get_cpu_graph():
     try:
         subprocess.run([
             "rrdtool", "graph", graph_path,
-            "--title=CPU Usage",
+            "--title=CPU Usage et IODelay",
             "--width=800", "--height=400",
-            "DEF:cpu=system.rrd:cpu:AVERAGE",
-            "LINE2:cpu#FF0000:CPU Usage"
+            "DEF:cpu_usage=system.rrd:cpu_usage:AVERAGE",
+            "DEF:io_delay=system.rrd:io_delay:AVERAGE",
+            "LINE2:cpu_usage#00FF00:CPU Usage (%)",  # Vert pour CPU Usage
+            "LINE2:io_delay#0000FF:IODelay (%)"     # Bleu pour IODelay
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
@@ -46,8 +48,10 @@ def get_memory_graph():
             "rrdtool", "graph", graph_path,
             "--title=Memory Usage",
             "--width=800", "--height=400",
-            "DEF:mem=system.rrd:mem:AVERAGE",
-            "LINE2:mem#00FF00:Memory Usage"
+            "DEF:total_mem=system.rrd:total_mem:AVERAGE",
+            "DEF:used_mem=system.rrd:used_mem:AVERAGE",
+            "LINE2:total_mem#00FF00:Total Memory (MB)",  # Vert pour mémoire totale
+            "LINE2:used_mem#0000FF:Used Memory (MB)"    # Bleu pour mémoire utilisée
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
@@ -62,8 +66,10 @@ def get_disk_graph():
             "rrdtool", "graph", graph_path,
             "--title=Disk Usage",
             "--width=800", "--height=400",
-            "DEF:disk=system.rrd:disk:AVERAGE",
-            "LINE2:disk#0000FF:Disk Usage"
+            "DEF:total_disk=system.rrd:total_disk:AVERAGE",
+            "DEF:used_disk=system.rrd:used_disk:AVERAGE",
+            "LINE2:total_disk#00FF00:Total Disk Space (GB)",  # Vert pour espace disque total
+            "LINE2:used_disk#0000FF:Used Disk Space (GB)"    # Bleu pour espace disque utilisé
         ])
         return send_file(graph_path, mimetype='image/png')
     except Exception as e:
