@@ -41,9 +41,10 @@ rrdtool create system.rrd --step 300 \
 
 Once the script is running, you can access the system metrics via the following URLs in your web browser:
 
-CPU : http://127.0.0.1:5000/graph/cpu<br />
-Mémoire : http://127.0.0.1:5000/graph/memory<br />
-Disque : http://127.0.0.1:5000/graph/disk
+System Info (JSON) : http://127.0.0.1:5000/system_info<br />
+CPU (Graph) : http://127.0.0.1:5000/graph/cpu<br />
+Memory (Graph) : http://127.0.0.1:5000/graph/memory<br />
+Disk (Graph) : http://127.0.0.1:5000/graph/disk
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
