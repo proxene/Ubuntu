@@ -25,10 +25,10 @@ This project uses RRDTool for storing system metrics. You need to create an RRD 
 rrdtool create system.rrd --step 300 \
     DS:cpu_usage:GAUGE:600:0:100 \
     DS:io_delay:GAUGE:600:0:100 \
-    DS:total_mem:GAUGE:600:0:100 \
-    DS:used_mem:GAUGE:600:0:100 \
-    DS:total_disk:GAUGE:600:0:100 \
-    DS:used_disk:GAUGE:600:0:100 \
+    DS:total_mem:GAUGE:600:0:U \
+    DS:used_mem:GAUGE:600:0:U \
+    DS:total_disk:GAUGE:600:0:U \
+    DS:used_disk:GAUGE:600:0:U \
     RRA:AVERAGE:0.5:1:2880 \
     RRA:AVERAGE:0.5:5:576
 ```
