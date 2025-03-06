@@ -10,7 +10,7 @@ Before running the application, ensure you have the required packages installed 
 
   ```sh
   sudo apt update
-  sudo apt install python3 python3-pip rrdtool sysstat
+  sudo apt install python3 python3-pip rrdtool sysstat bc
   pip install psutil flask requests
   ```
 
