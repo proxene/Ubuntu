@@ -12,6 +12,10 @@ This project allows you to monitor system metrics such as CPU usage, memory, and
 
 <br />
 
+![Memory Screen](https://i.ibb.co/tp451QdG/image.png)
+
+<br />
+
 ## Table of Contents
 
 1. [Installation](#installation)
